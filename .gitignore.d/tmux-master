@@ -1,4 +1,4 @@
 *
 !.tmux.conf.local
 !.gitignore.d/
-!.gitignore.d/tmux
+!.gitignore.d/tmux-master

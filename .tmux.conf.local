@@ -16,6 +16,12 @@ bind '"' choose-window
 bind A command-prompt "rename-window %%"
 # move to last active window
 bind C-a last-window
+
+set-option -g update-environment "SSH_AUTH_SOCK \
+                                  SSH_CONNECTION \
+                                  DISPLAY"
+
+
 # -- navigation ----------------------------------------------------------------
 
 # if you're running tmux within iTerm2

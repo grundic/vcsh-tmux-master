@@ -24,10 +24,15 @@ bind C-Space last-window
 bind -r p previous-window # select previous window
 bind -r n next-window     # select next window
 
-set-option -g update-environment "SSH_AUTH_SOCK \
-                                  SSH_CONNECTION \
-                                  DISPLAY"
-
+set -g update-environment \
+  "DISPLAY\
+  SSH_ASKPASS\
+  SSH_AUTH_SOCK\
+  SSH_AGENT_PID\
+  SSH_CONNECTION\
+  SSH_TTY\
+  WINDOWID\
+  XAUTHORITY"
 
 # -- navigation ----------------------------------------------------------------
 
@@ -304,14 +309,8 @@ bind -T copy-mode-vi MouseDown1Pane select-pane \;\
 
 # List of plugins
 set -g @plugin 'tmux-plugins/tpm'
-set -g @plugin 'tmux-plugins/tmux-resurrect'
+set -g @plugin 'nhdaly/tmux-better-mouse-mode'
+
 
 # Initialize TMUX plugin manager (keep this line at the very bottom of tmux.conf)
 run '~/.tmux/plugins/tpm/tpm'
-
-# TPM is not working - execute plugins manually :(
-set -g @resurrect-processes 'vim'
-set -g @resurrect-capture-pane-contents 'on'
-set -g @resurrect-save 'S'
-set -g @resurrect-restore 'R'
-run-shell ~/.tmux/plugins/tmux-resurrect/resurrect.tmux

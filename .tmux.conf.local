@@ -7,6 +7,7 @@
 # -- general stuf --------------------------------------------------------------
 
 unbind C-a
+unbind -n C-l
 set -g prefix2 C-Space
 bind C-Space send-prefix
 # Prefix+a should send the prefix key to the program running in the current pane

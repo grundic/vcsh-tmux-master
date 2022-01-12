@@ -13,7 +13,7 @@ bind C-Space send-prefix
 # Prefix+a should send the prefix key to the program running in the current pane
 bind a send-prefix -2
 # boost history
-set -g history-limit 5000000
+#set -g history-limit 5000000
 
 unbind '"'
 bind '"' choose-window
@@ -50,7 +50,7 @@ set -g update-environment \
 # new window retains current path, possible values are:
 #   - true
 #   - false (default)
-tmux_conf_new_window_retain_current_path=false
+tmux_conf_new_window_retain_current_path=true
 
 # new pane retains current path, possible values are:
 #   - true (default)

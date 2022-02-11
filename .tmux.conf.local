@@ -297,9 +297,9 @@ tmux_conf_copy_to_os_clipboard=false
 # move status line to top
 #set -g status-position top
 
-# Pressing Ctrl+Shift+Left (will move the current window to the left. Similarly right.
-bind-key -n C-S-Left swap-window -t -1
-bind-key -n C-S-Right swap-window -t +1
+# Pressing Ctrl+Left (will move the current window to the left. Similarly right.
+bind-key -n C-Left { swap-window -t -1; previous-window }
+bind-key -n C-Right { swap-window -t +1; next-window }
 
 # source additional configs under ~/.tmux.d directory
 if '[ -d ~/.tmux.d   ]' 'source ~/.tmux.d/*.conf'
